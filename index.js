@@ -46,34 +46,40 @@ function gotResult(err, results) {
     console.log(results);
     objects = results;
     //upimg.resize(400,400);
-    image(upimg, 0, 0,300,300);
-    
-    
+    image(upimg, 0, 0, 300, 300);
 
     for (let i = 0; i < objects.length; i++) {
-        noStroke();
-        fill(0, 255, 0);
+        
+        
         console.log(objects[i].label);
-        text(
-            objects[i].label +
-                " " +
-                nfc(objects[i].confidence * 100.0, 2) +
-                "%",
-            objects[i].x * width + 5 + a,
-            objects[i].y * height + 15
-        );
         if (objects[i].label == "cat") {
             console.log("1234444");
         }
-        noFill();
-        strokeWeight(4);
-        stroke(0, 255, 0);
-        rect(
-            objects[i].x * width + a,
-            objects[i].y * height,
-            objects[i].w * width,
-            objects[i].h * height
-        );
+        if (objects[i].label != "bowl") {
+            noFill();
+            strokeWeight(2);
+            stroke(255, 255, 255);
+            rect(
+                objects[i].x * width + a,
+                objects[i].y * height,
+                objects[i].w * width,
+                objects[i].h * height,
+                5,
+                5,
+                5,
+                5
+            );
+            strokeWeight(1);
+            stroke(0, 0, 0);
+            text(
+                objects[i].label +
+                    " " +
+                    nfc(objects[i].confidence * 100.0, 0) +
+                    "%",
+                objects[i].x * width + 5 + a,
+                objects[i].y * height + 15
+            );
+        }
     }
     //text(objects[0].label + " " + nfc(objects[0].confidence * 100.0, 2) + "%");
 }

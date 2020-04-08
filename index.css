@@ -5,9 +5,9 @@ body {
 }
 
 #title {
-  position:absolute;
-  margin-left: 38rem;
-  padding-top: 20px;
+    position: absolute;
+    margin-left: 38rem;
+    padding-top: 20px;
     text-align: center;
     line-height: 90%;
     z-index: +1;
@@ -27,11 +27,11 @@ body {
     height: 100%;
 }
 
-.canvas{
-  z-index: -1;
-  position:absolute;
-  margin-left: 564px;
-  margin-top: 225px;
+.canvas {
+    z-index: -1;
+    position: absolute;
+    margin-left: 564px;
+    margin-top: 225px;
 }
 
 .upload-btn {
