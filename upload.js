@@ -9,18 +9,20 @@ class Picture {
             _img = document.getElementById(this.img);
         if (fileObj && fileObj.files && fileObj.files[0]) {
             dataURL = windowURL.createObjectURL(fileObj.files[0]);
-            _img.setAttribute('src', dataURL);
+            _img.setAttribute("src", dataURL);
         } else {
             dataURL = t.value;
             let imgObj = document.getElementById(this.img);
-            imgObj.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)";
-            imgObj.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = dataURL;
+            imgObj.style.filter =
+                "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)";
+            imgObj.filters.item(
+                "DXImageTransform.Microsoft.AlphaImageLoader"
+            ).src = dataURL;
         }
     }
 }
 
-//调用方法：
-document.getElementById('add-pic-btn').addEventListener("change", function () {
-    let newPic = new Picture('add-pic-img');
+document.getElementById("add-pic-btn").addEventListener("change", function () {
+    let newPic = new Picture("add-pic-img");
     newPic.uploadPic(this);
 });
