@@ -29,6 +29,9 @@ body {
 
 .canvas{
   z-index: -1;
+  position:absolute;
+  margin-left: 564px;
+  margin-top: 225px;
 }
 
 .upload-btn {
@@ -37,7 +40,7 @@ body {
     background-image: url("src/album.png");
     background-size: 280px;
     margin-top: 14.5rem;
-    margin-left: -4.2rem;
+    margin-left: 35.8rem;
     width: 280px;
     height: 280px;
     position: absolute;

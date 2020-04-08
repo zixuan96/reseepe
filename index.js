@@ -11,12 +11,10 @@ function uploaded(file) {
     uploadLoading = true;
     upimg = createImg(file.data, imageReady);
     upimg.hide();
-    upimg.size(640, 420);
-    //img = upimg;
 }
 
 function setup() {
-    canvas = createCanvas(640, 420);
+    canvas = createCanvas(300, 300);
     canvas.addClass("canvas");
     //img = createImg(upimg, imageReady);
 
@@ -41,13 +39,17 @@ function imageReady() {
 function gotResult(err, results) {
     //document.getElementByClassName('uploadBtn').opacity="0";
     uploadBtn.hide();
-    let a = 100;
+    let a = 0;
     if (err) {
         console.log(err);
     }
     console.log(results);
     objects = results;
-    image(upimg, a, 0, 640, 420);
+    //upimg.resize(400,400);
+    image(upimg, 0, 0,300,300);
+    
+    
+
     for (let i = 0; i < objects.length; i++) {
         noStroke();
         fill(0, 255, 0);
