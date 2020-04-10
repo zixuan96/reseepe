@@ -24,18 +24,15 @@ function setup() {
 
 // Change the status when the model loads.
 function modelReady() {
-    console.log("model Ready!");
+    console.log("Model is ready!");
     status = true;
 }
 
-// When the image has been loaded,
-// get a prediction for that image
 function imageReady() {
     console.log("Detecting");
     yolo.detect(upimg, gotResult);
 }
 
-// A function to run when we get any errors and the results
 function gotResult(err, results) {
     //document.getElementByClassName('uploadBtn').opacity="0";
     uploadBtn.hide();
@@ -49,8 +46,6 @@ function gotResult(err, results) {
     image(upimg, 0, 0, 300, 300);
 
     for (let i = 0; i < objects.length; i++) {
-        
-        
         console.log(objects[i].label);
         if (objects[i].label == "cat") {
             console.log("1234444");
@@ -85,3 +80,8 @@ function gotResult(err, results) {
 }
 
 function draw() {}
+
+function reloadPage()
+  {
+    window.location.reload()
+  }
