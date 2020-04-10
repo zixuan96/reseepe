@@ -6,6 +6,9 @@ let status;
 let uploadLoading = false;
 let uploadBtn;
 let canvas;
+let name = new Array();
+let num = new Array();
+let q = 0;
 
 function uploaded(file) {
     uploadLoading = true;
@@ -17,7 +20,7 @@ function setup() {
     canvas = createCanvas(300, 300);
     canvas.addClass("canvas");
     //img = createImg(upimg, imageReady);
-
+    $(".tag").hide();
     uploadBtn = createFileInput(uploaded);
     uploadBtn.addClass("upload-btn");
 }
@@ -36,6 +39,7 @@ function imageReady() {
 function gotResult(err, results) {
     //document.getElementByClassName('uploadBtn').opacity="0";
     uploadBtn.hide();
+    $(".tag").show();
     let a = 0;
     if (err) {
         console.log(err);
@@ -46,7 +50,20 @@ function gotResult(err, results) {
     image(upimg, 0, 0, 300, 300);
 
     for (let i = 0; i < objects.length; i++) {
-        console.log(objects[i].label);
+        if (i == 0) {
+            name[q] = objects[i].label;
+            //console.log(objects[i].label);
+            num[q] = 1;
+        } else if (i > 0 && objects[i].label != objects[i - 1].label) {
+            //console.log(objects[i].label);
+            q++;
+            name[q] = objects[i].label;
+            num[q] = 1;
+        } else if (i > 0 && objects[i].label == objects[i - 1].label) {
+            num[q]++;
+            //num++;
+        }
+
         if (objects[i].label == "cat") {
             console.log("1234444");
         }
@@ -76,12 +93,16 @@ function gotResult(err, results) {
             );
         }
     }
+    for (i = 0; i <= q; i++) {
+        console.log(name[i] + " ×" + num[i]);
+    }
+
+    //console.log(String(num));
     //text(objects[0].label + " " + nfc(objects[0].confidence * 100.0, 2) + "%");
 }
 
 function draw() {}
 
-function reloadPage()
-  {
-    window.location.reload()
-  }
+function reloadPage() {
+    window.location.reload();
+}
