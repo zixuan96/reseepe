@@ -9,6 +9,48 @@ let canvas;
 let name = new Array();
 let num = new Array();
 let q = 0;
+let sum = 0;
+
+let fruit = new Array(
+    "apple",
+    "banana",
+    "cherry",
+    "grape",
+    "kiwi",
+    "orange",
+    "peach",
+    "pear",
+    "plum",
+    "pineapple",
+    "strawberry",
+    "broccoli",
+    "carrot",
+    "cucumber",
+    "cabbage",
+    "lettuce",
+    "tomato",
+    "potato"
+);
+let calo = new Array(
+    52,
+    87,
+    5,
+    3,
+    2,
+    45,
+    42,
+    96,
+    30,
+    96,
+    38,
+    45,
+    30,
+    14,
+    26,
+    10,
+    25,
+    110
+);
 
 function uploaded(file) {
     uploadLoading = true;
@@ -101,7 +143,26 @@ function gotResult(err, results) {
             num[i] +
             "<br>";
         console.log(name[i] + " × " + num[i]);
+
+        for (h = 0; h <= fruit.length; h++) {
+            if (name[i] == fruit[h]) {
+                sum = sum + calo[h] * num[i].toFixed(1);
+                document.getElementById("heat").innerHTML =
+                    document.getElementById("heat").innerHTML +
+                    calo[h].toFixed(1) +
+                    " × " +
+                    num[i] +
+                    " cal<br>";
+                console.log(calo[h] + " × " + num[i]);
+                console.log(sum);
+            }
+        }
     }
+    document.getElementById("heat").innerHTML =
+        document.getElementById("heat").innerHTML +
+        "<br>Total: " +
+        String(sum.toFixed(1)) +
+        " cal";
     //document.getElementById('ing').innerHTML = 'Fred Flinstone';
     //console.log(String(num));
     //text(objects[0].label + " " + nfc(objects[0].confidence * 100.0, 2) + "%");
