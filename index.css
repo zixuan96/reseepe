@@ -33,6 +33,26 @@ body {
     margin-top: 10rem;
 }
 
+#ing{
+    text-align: right;
+    position: absolute;
+    width: 20rem;
+    height: 18rem;
+    margin-left: 10rem;
+    margin-top: 17rem;
+    line-height:200%;
+    text-transform:capitalize;
+}
+
+#heat{
+    position: absolute;
+    width: 20rem;
+    height: 18rem;
+    margin-left: 60rem;
+    margin-top: 17rem;
+    line-height:200%;
+}
+
 #author {
     position: absolute;
     margin-left: 9rem;

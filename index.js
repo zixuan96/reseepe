@@ -94,9 +94,15 @@ function gotResult(err, results) {
         }
     }
     for (i = 0; i <= q; i++) {
-        console.log(name[i] + " ×" + num[i]);
+        document.getElementById("ing").innerHTML =
+            document.getElementById("ing").innerHTML +
+            name[i] +
+            " × " +
+            num[i] +
+            "<br>";
+        console.log(name[i] + " × " + num[i]);
     }
-
+    //document.getElementById('ing').innerHTML = 'Fred Flinstone';
     //console.log(String(num));
     //text(objects[0].label + " " + nfc(objects[0].confidence * 100.0, 2) + "%");
 }
