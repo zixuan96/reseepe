@@ -5,10 +5,6 @@
 ## Running by terminal
 
 ```
-python -m http.server
-```
-### or
-```
 npm run test
 ```
 
