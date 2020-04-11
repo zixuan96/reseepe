@@ -7,6 +7,10 @@
 ```
 python -m http.server
 ```
+### or
+```
+npm run test
+```
 
 ## Libraries
 
