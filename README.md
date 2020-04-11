@@ -17,7 +17,7 @@ python -m http.server
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 ```
 
-## Core code
+## Import database
 
 ```js
 let fruit = new Array(
@@ -60,4 +60,47 @@ let calo = new Array(
     25,
     110
 );
+```
+
+## Searching and counting
+
+```js
+let name = new Array(); //Build an array of all detected labels
+let num = new Array(); //Add counters for each labels
+let q = 0;
+
+for (let i = 0; i < objects.length; i++) {
+    //The first one is always special
+    if (i == 0) {
+        name[q] = objects[i].label;
+        num[q] = 1;
+    }
+    //Comparing the label with previous one
+    //A new label
+    else if (i > 0 && objects[i].label != objects[i - 1].label) {
+        q++;
+        name[q] = objects[i].label;
+        num[q] = 1;
+    }
+    //An existing label
+    else if (i > 0 && objects[i].label == objects[i - 1].label) {
+        num[q]++;
+    }
+}
+```
+
+## Acquiring heat data from the database
+
+```js
+for (h = 0; h <= fruit.length; h++) {
+    if (name[i] == fruit[h]) {
+        sum = sum + calo[h] * num[i].toFixed(1);//The total heat 
+        document.getElementById("heat").innerHTML =
+            document.getElementById("heat").innerHTML +
+            calo[h].toFixed(1) +
+            " × " +
+            num[i] +
+            " cal<br>";
+    }
+}
 ```
