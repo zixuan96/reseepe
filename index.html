@@ -13,12 +13,46 @@
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
 		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
-	<script src="index.js"></script>
+	<script src="js/index.js"></script>
 
+	<script src="js/calculator.js"></script>
+	
 	<link rel="stylesheet" type="text/css" href="index.css">
 </head>
 
 <body>
+	<table id="rec" onclick="rec()">
+		<tr>
+			<td colspan="5" id="display">0</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+			<td>+</td>
+			<td id="reset">c</td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>5</td>
+			<td>6</td>
+			<td>-</td>
+			<td rowspan="3" id="sum"c onclick="sum1()">=</td>
+		</tr>
+		<tr>
+			<td>7</td>
+			<td>8</td>
+			<td>9</td>
+			<td>*</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>0</td>
+			<td>.</td>
+			<td>/</td>
+		</tr>
+	</table>
+
 	<div id="bkg"><img id="pot" src="src/background.png" alt="bkg" /></div>
 	<div id="title">
 		<h1>R E S E E P E</h1>
@@ -31,7 +65,7 @@
 	<input type="button" id="re" onmousedown="reloadPage()" />
 	<input type="button" id="pic" onmousedown="" />
 	<input type="button" id="cam" onmousedown="" />
-	<input type="button" id="cal" onmousedown="" />
+	<input type="button" id="cal" onmousedown="opencal()" />
 	<input type="button" id="set" onmousedown="" />
 	<div id="author">
 		<h5>Developed by<br />Zixuan Yang</h5>
