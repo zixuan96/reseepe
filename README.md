@@ -2,7 +2,7 @@
 
 -   Final project of AI class
 
-## Run by terminal
+## Running by terminal
 
 ```
 python -m http.server
@@ -17,7 +17,7 @@ python -m http.server
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 ```
 
-## Import database
+## Importing database
 
 ```js
 let fruit = new Array(
@@ -89,7 +89,7 @@ for (let i = 0; i < objects.length; i++) {
 }
 ```
 
-## Acquiring heat data from the database
+## Searching heat data from the database
 
 ```js
 for (h = 0; h <= fruit.length; h++) {
