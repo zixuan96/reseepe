@@ -2,6 +2,16 @@
 
 -   Final project of AI class
 
+## About YOLO
+
+A single convolutional network simultaneously predicts multiple bounding boxes and class probabilities for those boxes. YOLO trains on full images and directly optimizes detection performance.
+
+-   YOLO is extremely fast. We simply run our neural network on a new image at test time to predict detections.
+
+-   YOLO reasons globally about the image when making predictions.
+
+-   YOLO learns generalizable representations of objects.
+
 ## Running by terminal
 
 ```
@@ -62,6 +72,27 @@ let calo = new Array(
 );
 ```
 
+## Detection and recognition
+
+```js
+function imageReady() {
+    yolo.detect(upimg, gotResult);
+}
+```
+
+## Getting results
+
+```json
+{
+    label: "apple"
+    confidence: 0.9158242344856262
+    h: 0.24185683177067682
+    w: 0.24617767333984375
+    x: 0.7303961240328275
+    y: 0.5583128195542556
+}
+```
+
 ## Searching and counting
 
 ```js
@@ -94,7 +125,7 @@ for (let i = 0; i < objects.length; i++) {
 ```js
 for (h = 0; h <= fruit.length; h++) {
     if (name[i] == fruit[h]) {
-        sum = sum + calo[h] * num[i].toFixed(1);//The total heat 
+        sum = sum + calo[h] * num[i].toFixed(1); //The total heat
         document.getElementById("heat").innerHTML =
             document.getElementById("heat").innerHTML +
             calo[h].toFixed(1) +
