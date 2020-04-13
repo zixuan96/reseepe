@@ -1,6 +1,6 @@
 # Reseepe
 
--   Final project of AI class
+Final project of AI class. A platform who can recognize the dishes and show the heat.
 
 ## About YOLO
 
@@ -84,12 +84,12 @@ function imageReady() {
 
 ```json
 {
-    label: "apple"
-    confidence: 0.9158242344856262
-    h: 0.24185683177067682
-    w: 0.24617767333984375
-    x: 0.7303961240328275
-    y: 0.5583128195542556
+    "label": "apple",
+    "confidence": 0.9158242344856262,
+    "h": 0.24185683177067682,
+    "w": 0.24617767333984375,
+    "x": 0.7303961240328275,
+    "y": 0.5583128195542556
 }
 ```
 
